@@ -1,7 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:whatsapp_ios_clone/core/common/navbar/navbar.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main()async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+);
   runApp(const MyApp());
 }
 
