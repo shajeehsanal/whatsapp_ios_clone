@@ -3,10 +3,10 @@ import 'package:whatsapp_ios_clone/core/common/navbar/navbar.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
-void main()async {
+void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-);
+  );
   runApp(const MyApp());
 }
 
@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const CupertinoApp(
       home: NavBar(),
+      theme: CupertinoThemeData(applyThemeToAll: true),
       debugShowCheckedModeBanner: false,
     );
   }

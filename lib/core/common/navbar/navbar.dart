@@ -1,12 +1,8 @@
-// ignore_for_file: deprecated_member_use
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:whatsapp_ios_clone/core/constants/asset_constants.dart';
 import 'package:whatsapp_ios_clone/core/global/global_variables.dart';
-import 'package:whatsapp_ios_clone/features/chat/home/home_screen.dart';
-import 'package:whatsapp_ios_clone/theme/palette.dart';
+import 'package:whatsapp_ios_clone/features/chat/home/chat_view_screen.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({super.key});
@@ -16,7 +12,7 @@ class NavBar extends StatefulWidget {
 }
 
 class _NavBarState extends State<NavBar> {
-  int index = 0;
+  int index = 3;
 
   @override
   Widget build(BuildContext context) {
@@ -25,33 +21,29 @@ class _NavBarState extends State<NavBar> {
     return CupertinoTabScaffold(
       tabBar: CupertinoTabBar(
         currentIndex: index,
-        activeColor: themeMode == ThemeMode.light ? null : Palette.greenColor,
         items: [
-          const BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.chat_bubble_fill),
-            label: 'Chats',
-          ),
           BottomNavigationBarItem(
-            icon: SvgPicture.asset(
+            icon: Image.asset(AssetConstants.statusIcon),
+            activeIcon: Image.asset(
               AssetConstants.statusIcon,
-              color: index == 1
-                  ? themeMode == ThemeMode.light
-                      ? Palette.blueColor
-                      : Palette.greenColor
-                  : null,
+              color: CupertinoColors.activeBlue,
             ),
             label: 'Status',
-          ),
-          const BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.camera_fill),
-            label: 'Camera',
           ),
           const BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.phone),
             label: 'Calls',
           ),
           const BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
+            icon: Icon(CupertinoIcons.camera),
+            label: 'Camera',
+          ),
+          const BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.chat_bubble_2_fill),
+            label: 'Chats',
+          ),
+          const BottomNavigationBarItem(
+            icon: Icon(CupertinoIcons.settings),
             label: 'Settings',
           ),
         ],
@@ -61,7 +53,7 @@ class _NavBarState extends State<NavBar> {
         },
       ),
       tabBuilder: (context, index) {
-        if (index == 0) {
+        if (index == 3) {
           return const HomeScreen();
         }
         return Container();
