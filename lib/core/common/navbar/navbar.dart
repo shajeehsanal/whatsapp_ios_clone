@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:whatsapp_ios_clone/core/constants/asset_constants.dart';
 import 'package:whatsapp_ios_clone/core/global/global_variables.dart';
 import 'package:whatsapp_ios_clone/features/chat/home/chat_view_screen.dart';
