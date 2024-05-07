@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 class Palette {
   static const greenColor = Color.fromRGBO(76, 175, 80, 1);
-  static const blueColor = Color.fromRGBO(46, 120, 199, 1);
+  static const blueColor = CupertinoColors.activeBlue;
+  static const greyColor = CupertinoColors.systemGrey;
 }
