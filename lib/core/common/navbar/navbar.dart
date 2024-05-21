@@ -34,8 +34,8 @@ class _NavBarState extends State<NavBar> {
             label: 'Calls',
           ),
           const BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.camera),
-            label: 'Camera',
+            icon: Icon(CupertinoIcons.person_3),
+            label: 'Communities',
           ),
           const BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.chat_bubble_2_fill),
